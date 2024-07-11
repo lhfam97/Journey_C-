@@ -5,13 +5,11 @@ namespace Journey.Infrastructure;
 public class JourneyDbContext : DbContext
 {
     public DbSet<Trip> Trips { get; set; }
+    public DbSet<Activity> Activities { get; set; }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=caminho_databaseW");
-    }
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Activity>().ToTable("Activities");
+        optionsBuilder.UseSqlite("Data Source=N:\\source\\repos\\C# Rocketseat\\Journey\\Journey\\src\\Journey.Infrastructure\\JourneyDatabase.db");
     }
 }
